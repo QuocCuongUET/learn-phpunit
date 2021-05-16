@@ -3,7 +3,7 @@ use PHPUnit\Framework\TestCase;
 
 final class EmailTest extends TestCase
 {
-    public function testCanBeCreatedFromValidEmailAddress(): void
+    public function test_can_be_created_from_valid_email_address(): void
     {
         $this->assertInstanceOf(
             Email::class,
@@ -11,14 +11,14 @@ final class EmailTest extends TestCase
         );
     }
 
-    public function testCannotBeCreatedFromInvalidEmailAddress(): void
+    public function test_cannot_be_created_from_invalid_email_address(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
         Email::fromString('invalid');
     }
 
-    public function testCanBeUsedAsString(): void
+    public function test_can_be_used_as_string(): void
     {
         $this->assertEquals(
             'user@example.com',
